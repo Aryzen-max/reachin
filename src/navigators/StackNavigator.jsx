@@ -6,6 +6,12 @@ import LoginScreen from '../screens/auth/LoginScreen';
 import OtpScreen from '../screens/auth/OtpScreen';
 import MyProfileScreen from '../screens/auth/MyProfileScreen';
 import VehicleDetails from '../screens/auth/VehicleDetails';
+import ProfileScreen from '../screens/menuDetails/ProfileScreen';
+import ServiceHistoryScreen from '../screens/menuDetails/ServiceHistoryScreen';
+import ManageVehicleScreen from '../screens/menuDetails/ManageVehicleScreen';
+import HelpSupportScreen from '../screens/menuDetails/HelpSupportScreen';
+import AboutUsScreen from '../screens/menuDetails/AboutUsScreen';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -40,6 +46,31 @@ const StackNavigator = () => (
     <Stack.Screen
       name="VehicleDetails"
       component={VehicleDetails}
+      options={{ headerShown: false }}
+    />
+        <Stack.Screen
+      name="ProfileScreen"
+      component={ProfileScreen}
+      options={{ headerShown: false }}
+    />
+           <Stack.Screen
+      name="ServiceHistoryScreen"
+      component={ServiceHistoryScreen}
+      options={{ headerShown: false }}
+    />
+             <Stack.Screen
+      name="ManageVehicleScreen"
+      component={ManageVehicleScreen}
+      options={{ headerShown: false }}
+    />
+               <Stack.Screen
+      name="HelpSupportScreen"
+      component={HelpSupportScreen}
+      options={{ headerShown: false }}
+    />
+                   <Stack.Screen
+      name="AboutUsScreen"
+      component={AboutUsScreen}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>
