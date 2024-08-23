@@ -32,49 +32,49 @@ const DrawerContent = (props) => {
       <View style={styles.content}>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('ProfileScreen')}>
+          onPress={() => navigation.navigate('ProfileScreen')} activeOpacity={0.7}>
           <Ionicons name="person-outline" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Profile</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('ServiceHistoryScreen')}>
+          onPress={() => navigation.navigate('ServiceHistoryScreen')} activeOpacity={0.7}>
           <MaterialIcons name="history" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Service History</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('ManageVehicleScreen')}>
+          onPress={() => navigation.navigate('ManageVehicleScreen')} activeOpacity={0.7}>
           <FontAwesome name="car" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Manage Vehicle</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('HelpSupportScreen')}>
+          onPress={() => navigation.navigate('HelpSupportScreen')} activeOpacity={0.7}>
           <Ionicons name="help-circle-outline" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Help & Support</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('ShareThisAppScreen')}>
+          onPress={() => navigation.navigate('ShareThisAppScreen')} activeOpacity={0.7}>
           <Entypo name="share" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Share This App</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('AboutUsScreen')}>
+          onPress={() => navigation.navigate('AboutUsScreen')} activeOpacity={0.7}>
           <Ionicons name="information-circle-outline" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>About Us</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('SettingsScreen')}>
-          <Ionicons name="settings-outline" size={24} color="#0077B5" style={styles.icon} />
-          <Text style={styles.text}>Settings</Text>
+          onPress={() => navigation.navigate('PrivacyPolicyScreen')} activeOpacity={0.7}>
+          <Ionicons name="book-outline" size={24} color="#0077B5" style={styles.icon} />
+          <Text style={styles.text}>Privacy & Policy</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={handleLogout}>
+          onPress={handleLogout} activeOpacity={0.7}>
           <Ionicons name="log-out-outline" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Logout</Text>
         </TouchableOpacity>

@@ -11,6 +11,9 @@ import ServiceHistoryScreen from '../screens/menuDetails/ServiceHistoryScreen';
 import ManageVehicleScreen from '../screens/menuDetails/ManageVehicleScreen';
 import HelpSupportScreen from '../screens/menuDetails/HelpSupportScreen';
 import AboutUsScreen from '../screens/menuDetails/AboutUsScreen';
+import PrivacyPolicyScreen from '../screens/menuDetails/PrivacyPolicyScreen';
+import NotificationScreen from '../screens/notification/NotificationScreen';
+import SearchLocationScreen from '../screens/notification/SearchLocationScreen';
 
 
 
@@ -71,6 +74,21 @@ const StackNavigator = () => (
                    <Stack.Screen
       name="AboutUsScreen"
       component={AboutUsScreen}
+      options={{ headerShown: false }}
+    />
+                       <Stack.Screen
+      name="PrivacyPolicyScreen"
+      component={PrivacyPolicyScreen}
+      options={{ headerShown: false }}
+    />
+                           <Stack.Screen
+      name="NotificationScreen"
+      component={NotificationScreen}
+      options={{ headerShown: false }}
+    />
+                               <Stack.Screen
+      name="SearchLocationScreen"
+      component={SearchLocationScreen}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>

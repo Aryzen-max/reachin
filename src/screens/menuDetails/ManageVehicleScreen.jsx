@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   button: {
-    backgroundColor: 'green',
+    backgroundColor: 'red',
     padding: 10,
     borderRadius: 4,
     alignItems: 'center',
