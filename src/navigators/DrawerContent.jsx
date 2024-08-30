@@ -1,4 +1,3 @@
-// DrawerContent.js
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -7,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
+import Share from 'react-native-share';
 
 const DrawerContent = (props) => {
   const navigation = useNavigation();
@@ -16,25 +16,52 @@ const DrawerContent = (props) => {
     Alert.alert('Logout', 'You have been logged out.');
   };
 
+  const handleLogin = () => {
+    // Navigate to the login screen or handle login logic
+    navigation.navigate('LoginScreen'); // Replace with your login screen route name
+  };
+  const onShare = async () => {
+    try {
+      const shareOptions = {
+        title: 'Share via',
+        message: 'Check out this awesome app!',
+        url: 'https://amarujala.com', // You can replace this with your app's URL
+      };
+      const result = await Share.open(shareOptions);
+      console.log(result);
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <LinearGradient
         colors={['#fddd00', '#ff6f61']} // Gradient colors
         style={styles.header}
       >
+          <TouchableOpacity  onPress={() => navigation.navigate('ProfileScreen')}>
         <Image
           source={{ uri: 'https://i.pinimg.com/736x/d0/13/3e/d0133ebbb4b77dde8cd32eff745ef7d2.jpg' }} // Replace with your profile picture URL
           style={styles.profilePicture}
         />
+        </TouchableOpacity>
         <Text style={styles.name}>John Doe</Text>
         <Text style={styles.email}>johndoe@example.com</Text>
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={handleLogin}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.loginButtonText}>Login</Text>
+        </TouchableOpacity>
       </LinearGradient>
       <View style={styles.content}>
-        <TouchableOpacity
+      <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('ProfileScreen')} activeOpacity={0.7}>
-          <Ionicons name="person-outline" size={24} color="#0077B5" style={styles.icon} />
-          <Text style={styles.text}>Profile</Text>
+          onPress={() => navigation.navigate('ManageVehicleScreen')} activeOpacity={0.7}>
+          <FontAwesome name="car" size={24} color="#0077B5" style={styles.icon} />
+          <Text style={styles.text}>Manage Vehicle</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
@@ -42,12 +69,7 @@ const DrawerContent = (props) => {
           <MaterialIcons name="history" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Service History</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.item}
-          onPress={() => navigation.navigate('ManageVehicleScreen')} activeOpacity={0.7}>
-          <FontAwesome name="car" size={24} color="#0077B5" style={styles.icon} />
-          <Text style={styles.text}>Manage Vehicle</Text>
-        </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.item}
           onPress={() => navigation.navigate('HelpSupportScreen')} activeOpacity={0.7}>
@@ -56,7 +78,7 @@ const DrawerContent = (props) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate('ShareThisAppScreen')} activeOpacity={0.7}>
+          onPress={onShare} activeOpacity={0.7}>
           <Entypo name="share" size={24} color="#0077B5" style={styles.icon} />
           <Text style={styles.text}>Share This App</Text>
         </TouchableOpacity>
@@ -110,6 +132,19 @@ const styles = StyleSheet.create({
   email: {
     color: '#E0E0E0',
     fontSize: 14,
+    marginBottom: 10,
+  },
+  loginButton: {
+    backgroundColor: '#0077B5',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    marginTop: 10,
+  },
+  loginButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   content: {
     flex: 1,

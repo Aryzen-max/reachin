@@ -14,6 +14,8 @@ import AboutUsScreen from '../screens/menuDetails/AboutUsScreen';
 import PrivacyPolicyScreen from '../screens/menuDetails/PrivacyPolicyScreen';
 import NotificationScreen from '../screens/notification/NotificationScreen';
 import SearchLocationScreen from '../screens/notification/SearchLocationScreen';
+import PlaceOrderScreen from '../screens/menuDetails/PlaceOrderScreen';
+import BookingSucessFull from '../screens/menuDetails/BookingSucessFull';
 
 
 
@@ -89,6 +91,16 @@ const StackNavigator = () => (
                                <Stack.Screen
       name="SearchLocationScreen"
       component={SearchLocationScreen}
+      options={{ headerShown: false }}
+    />
+                                  <Stack.Screen
+      name="PlaceOrderScreen"
+      component={PlaceOrderScreen}
+      options={{ headerShown: false }}
+    />
+                                    <Stack.Screen
+      name="BookingSucessFull"
+      component={BookingSucessFull}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>

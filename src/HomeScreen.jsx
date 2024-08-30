@@ -3,13 +3,14 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Platform, P
 import WebView from 'react-native-webview';
 import LinearGradient from 'react-native-linear-gradient';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const [location, setLocation] = useState({
     latitude: 28.6139, // Default coordinates (e.g., New Delhi)
     longitude: 77.209,
   });
 
-  const [selectedService, setSelectedService] = useState(null); // State to track selected service type
+  // Set "Bike Service" as the default selected service type
+  const [selectedService, setSelectedService] = useState('Bike Service');
 
   useEffect(() => {
     requestLocationPermission();
@@ -55,7 +56,7 @@ const HomeScreen = ({navigation}) => {
       {/* Map Section */}
       <View style={styles.mapContainer}>
         <WebView
-          source={{ uri: `https://www.openstreetmap.org/export/embed.html?bbox=${location.longitude - 0.01},${location.latitude - 0.01},${location.longitude + 0.01},${location.latitude + 0.01}&layer=mapnik` }}
+          source={{ uri: `https://www.google.com/maps/d/viewer?ie=UTF&msa=0&mid=1ugPBH9-MCw7w7lSrdNWcjO9_y7M&ll=28.61548526474437%2C77.35514857221418&z=11${location.longitude - 0.01},${location.latitude - 0.01},${location.longitude + 0.01},${location.latitude + 0.01}&layer=mapnik` }}
           style={styles.map}
         />
         <Text style={styles.addressText}>
@@ -65,7 +66,7 @@ const HomeScreen = ({navigation}) => {
 
       {/* Bottom Sheet-like View with Gradient Background */}
       <LinearGradient
-        colors={['#ff7e5f', '#feb47b']} // Define your gradient colors here
+        colors={['#fddd00', '#ff6f61']}
         style={styles.bottomSheet}
       >
         {/* Input for Address */}
@@ -77,16 +78,16 @@ const HomeScreen = ({navigation}) => {
         {/* Service Type Section */}
         <Text style={styles.sectionTitleHead}>Service Type</Text>
         <View style={styles.serviceTypeContainer}>
-          <TouchableOpacity 
-            style={styles.radioContainer} 
+          <TouchableOpacity
+            style={styles.radioContainer}
             onPress={() => handleServiceSelection('Bike Service')}
             activeOpacity={0.7}
           >
             <View style={[styles.radioCircle, selectedService === 'Bike Service' && styles.selectedRadio]} />
             <Text style={styles.radioText}>Bike Service</Text>
           </TouchableOpacity>
-          <TouchableOpacity 
-            style={styles.radioContainer} 
+          <TouchableOpacity
+            style={styles.radioContainer}
             onPress={() => handleServiceSelection('Car Service')}
             activeOpacity={0.7}
           >
@@ -98,12 +99,12 @@ const HomeScreen = ({navigation}) => {
         {/* Vehicle Section */}
         <Text style={styles.sectionTitleHead}>Vehicle Details :- </Text>
         <Text style={styles.sectionTitle}>KTM-135 </Text>
-        <TouchableOpacity style={styles.addButton} onPress={()=>navigation.navigate('ManageVehicleScreen')}>
+        <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('ManageVehicleScreen')}>
           <Text style={styles.addButtonText}>Add or Change</Text>
         </TouchableOpacity>
 
         {/* Next Button */}
-        <TouchableOpacity style={styles.nextButton}>
+        <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('PlaceOrderScreen')}>
           <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
       </LinearGradient>
@@ -192,7 +193,7 @@ const styles = StyleSheet.create({
   addButton: {
     backgroundColor: '#f0f0f0',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 10,
     alignItems: 'center',
     marginBottom: 20,
   },
@@ -203,12 +204,12 @@ const styles = StyleSheet.create({
   nextButton: {
     backgroundColor: '#ff0000',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 10,
     alignItems: 'center',
   },
   nextButtonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 14,
     fontFamily: 'Poppins-SemiBold',
   },
 });

@@ -25,6 +25,7 @@ const SplashScreen = ({ navigation }) => {
             resizeMode='contain'
           />
           <Text style={styles.text}>Welcome to Reach In</Text>
+          <Text style={styles.version}>Version 1.0.0</Text>
         </View>
       </LinearGradient>
     </SafeAreaView>
@@ -54,6 +55,15 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-BlackItalic',
     color: '#000000',
     marginTop: 20,
+    textAlign: 'center',
+  },
+  version: {
+    position:'absolute',
+    bottom:10,
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+    color: '#000000',
+    marginTop: 10,
     textAlign: 'center',
   },
 });
