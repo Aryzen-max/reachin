@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const PlaceOrderScreen = ({navigation}) => {
   return (
     <LinearGradient
-      colors={['#fddd00', '#ff6f61']}
+    colors={['#4c669f', '#3b5998', '#192f6a']}
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
@@ -68,9 +68,16 @@ const PlaceOrderScreen = ({navigation}) => {
           </Text>
         </View>
 
-        <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('BookingSucessFull')}>
-          <Text style={styles.buttonText}>Place Your Booking</Text>
-        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={()=>navigation.navigate('BookingSucessFull')}>
+            <LinearGradient
+              colors={['#4c669f', '#3b5998', '#192f6a']} 
+              style={styles.button}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <Text style={styles.buttonText}>Place Your Booking</Text>
+            </LinearGradient>
+          </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
   );
@@ -95,7 +102,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 14,  // Reduced font size
     fontFamily: 'Poppins-SemiBold',
-    color: '#a52a2a', // Dark red color for labels
+    color: 'yellow', // Dark red color for labels
   },
   row: {
     flexDirection: 'row',
@@ -104,7 +111,7 @@ const styles = StyleSheet.create({
   },
   value: {
     fontSize: 12,  // Reduced font size
-    color: '#000',
+    color: '#fff',
     fontFamily: 'Poppins-Regular',
   },
   separator: {
@@ -114,7 +121,7 @@ const styles = StyleSheet.create({
   },
   subValue: {
     fontSize: 10,  // Reduced font size
-    color: '#777',
+    color: 'yellow',
     fontFamily: 'Poppins-Regular',
   },
   couponRow: {
@@ -125,25 +132,25 @@ const styles = StyleSheet.create({
   },
   applyCouponText: {
     fontSize: 14,  // Reduced font size
-    color: '#a52a2a',
+    color: 'yellow',
     fontFamily: 'Poppins-Regular',
   },
   totalAmountLabel: {
     fontSize: 16,  // Reduced font size
     fontFamily: 'Poppins-Regular',
-    color: '#a52a2a',
+    color: 'yellow',
   },
   totalAmountValue: {
     fontSize: 16,  // Reduced font size
-    color: '#000',
+    color: 'yellow',
     fontFamily: 'Poppins-SemiBold',
   },
   note: {
     fontSize: 12,  // Reduced font size
-    color: '#777',
+    color: '#fff',
   },
   button: {
-    backgroundColor: '#ff0000',
+    width:'100%',
     paddingVertical: 10,  // Reduced padding
     borderRadius: 8,
     alignItems: 'center',

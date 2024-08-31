@@ -70,7 +70,7 @@ const OtpScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
-        colors={['#fddd00', '#ff6f61']}
+       colors={['#4c669f', '#3b5998', '#192f6a']} 
         style={styles.container}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -92,7 +92,7 @@ const OtpScreen = ({ navigation }) => {
 
           <TouchableOpacity style={styles.submitButton} activeOpacity={0.7} onPress={handleSubmitOtp}>
             <LinearGradient
-              colors={['#ff8c00', '#ff6f61']}
+              colors={['#4c669f', '#3b5998', '#192f6a']} 
               style={styles.submitButton}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
@@ -119,11 +119,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontFamily: 'Poppins-BlackItalic',
-    color: '#333',
+    color: '#fff',
   },
   subtitle: {
     fontSize: 18,
-    color: '#666',
+    color: '#fff',
+    textAlign:'center',
     fontFamily: 'Poppins-SemiBold',
   },
   inputContainer: {

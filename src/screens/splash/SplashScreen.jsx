@@ -12,12 +12,12 @@ const SplashScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
-        colors={['#fddd00', '#ff6f61']}
+         colors={['#4c669f', '#3b5998', '#192f6a']}
         style={styles.gradient}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
-        <StatusBar backgroundColor={'#fddd00'} barStyle="dark-content" />
+        <StatusBar backgroundColor={'#4c669f'} barStyle="dark-content" />
         <View style={styles.content}>
           <Image
             source={{ uri: 'https://st2.depositphotos.com/3682225/11228/v/450/depositphotos_112288198-stock-illustration-automotive-repair-icon-car-service.jpg' }}
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontFamily: 'Poppins-BlackItalic',
-    color: '#000000',
+    color: '#fff',
     marginTop: 20,
     textAlign: 'center',
   },
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     bottom:10,
     fontSize: 16,
     fontFamily: 'Poppins-Regular',
-    color: '#000000',
+    color: '#fff',
     marginTop: 10,
     textAlign: 'center',
   },

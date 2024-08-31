@@ -71,7 +71,7 @@ const ServiceHistoryScreen = () => {
 
   return (
     <LinearGradient
-    colors={['#fddd00', '#ff6f61']} // Gradient colors
+    colors={['#4c669f', '#3b5998', '#192f6a']}
       style={styles.container}
     >
       <Text style={styles.title}>Service History</Text>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: 'Poppins-SemiBold',
     marginBottom: 16,
-    color:'#000'
+    color:'#fff'
   },
   itemContainer: {
     padding: 16,

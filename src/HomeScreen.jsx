@@ -66,7 +66,7 @@ const HomeScreen = ({ navigation }) => {
 
       {/* Bottom Sheet-like View with Gradient Background */}
       <LinearGradient
-        colors={['#fddd00', '#ff6f61']}
+         colors={['#4c669f', '#3b5998', '#192f6a']}
         style={styles.bottomSheet}
       >
         {/* Input for Address */}
@@ -103,10 +103,16 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.addButtonText}>Add or Change</Text>
         </TouchableOpacity>
 
-        {/* Next Button */}
-        <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('PlaceOrderScreen')}>
-          <Text style={styles.nextButtonText}>Next</Text>
-        </TouchableOpacity>
+        <TouchableOpacity style={styles.nextButton} activeOpacity={0.7} onPress={() => navigation.navigate('PlaceOrderScreen')}>
+            <LinearGradient
+              colors={['#4c669f', '#3b5998', '#192f6a']} 
+              style={styles.nextButton}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <Text style={styles.nextButtonText}>Proceed</Text>
+            </LinearGradient>
+          </TouchableOpacity>
       </LinearGradient>
     </View>
   );
@@ -158,7 +164,7 @@ const styles = StyleSheet.create({
   sectionTitleHead: {
     fontFamily: 'Poppins-Bold',
     marginBottom: 10,
-    color: 'red',
+    color: 'yellow',
   },
   sectionTitle: {
     fontFamily: 'Poppins-SemiBold',
@@ -198,12 +204,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   addButtonText: {
-    color: 'red',
+    color: '#4c669f',
     fontFamily: 'Poppins-SemiBold',
   },
   nextButton: {
-    backgroundColor: '#ff0000',
-    padding: 10,
+    width:'100%',
+    paddingVertical: 10,
     borderRadius: 10,
     alignItems: 'center',
   },

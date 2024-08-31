@@ -35,7 +35,7 @@ const SearchLocationScreen = () => {
 
   return (
     <LinearGradient
-      colors={['#e0e0e0', '#f5f5f5']} // Same gradient colors as used in other screens
+    colors={['#4c669f', '#3b5998', '#192f6a']}
       style={styles.container}
     >
       <TextInput

@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const AboutUsScreen = () => {
   return (
     <LinearGradient
-    colors={['#fddd00', '#ff6f61']}
+    colors={['#4c669f', '#3b5998', '#192f6a']}
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.contentContainer} showsVerticalScrollIndicator={false}>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontFamily: 'Poppins-SemiBold',
-    color:'#000',
+    color:'#fff',
     textAlign: 'center',
  
     marginBottom: 16,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
     fontFamily: 'Poppins-SemiBold',
-    color:'#000',
+    color:'#fff',
     marginTop: 16,
     marginBottom: 8,
   },
@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     textAlign: 'justify',
+    color:'yellow',
     fontFamily: 'Poppins-Regular',
     marginBottom: 16,
   },
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginTop: 8,
+    color:'yellow',
   },
 });
 

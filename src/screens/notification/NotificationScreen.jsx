@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const NotificationScreen = () => {
   return (
     <LinearGradient
-    colors={['#fddd00', '#ff6f61']}
+    colors={['#4c669f', '#3b5998', '#192f6a']}
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.contentContainer}>

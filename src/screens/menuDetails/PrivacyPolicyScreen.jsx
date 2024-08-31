@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const PrivacyPolicyScreen = () => {
   return (
     <LinearGradient
-    colors={['#fddd00', '#ff6f61']} // Gradient colors
+    colors={['#4c669f', '#3b5998', '#192f6a']}
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.contentContainer} showsVerticalScrollIndicator={false}>
@@ -76,14 +76,14 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     marginBottom: 10,
     textAlign:'center',
-    color:'#000'
+    color:'#fff'
   },
   sectionTitle: {
     fontSize: 20,
     fontFamily: 'Poppins-SemiBold',
     marginTop: 16,
     marginBottom: 8,
-     color:'#000'
+     color:'#fff'
   },
   text: {
     fontSize: 16,
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     fontFamily: 'Poppins-Regular',
     marginBottom: 16,
-     color:'#000'
+     color:'yellow'
   },
 });
 

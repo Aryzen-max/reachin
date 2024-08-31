@@ -9,7 +9,7 @@ const initialVehicles = [
   // Add more vehicles as needed
 ];
 
-const ManageVehicleScreen = () => {
+const ManageVehicleScreen = ({navigation}) => {
   const [vehicles, setVehicles] = useState(initialVehicles);
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
@@ -38,33 +38,44 @@ const ManageVehicleScreen = () => {
 
   return (
     <LinearGradient
-    colors={['#fddd00', '#ff6f61']} // Gradient colors
+    colors={['#4c669f', '#3b5998', '#192f6a']}
       style={styles.container}
     >
       <Text style={styles.title}>Manage Vehicles</Text>
       <View style={styles.form}>
         <TextInput
           style={styles.input}
-          placeholder="Make"
+          placeholder="Enter your vehicle name"
           value={make}
+          placeholderTextColor={"#fff"}
           onChangeText={setMake}
         />
         <TextInput
           style={styles.input}
-          placeholder="Model"
+          placeholder="Enter your vehicle Model"
           value={model}
           onChangeText={setModel}
+          placeholderTextColor={"#fff"}
         />
         <TextInput
           style={styles.input}
-          placeholder="Year"
+          placeholder="Enter your vehicle Year"
           value={year}
           onChangeText={setYear}
+          placeholderTextColor={"#fff"}
           keyboardType="numeric"
         />
-        <TouchableOpacity style={styles.button} onPress={addVehicle}>
-          <Text style={styles.buttonText}>Add Vehicle</Text>
-        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={() => navigation.navigate('HomeScreen')}>
+            <LinearGradient
+              colors={['#4c669f', '#3b5998', '#192f6a']} 
+              style={styles.button}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <Text style={styles.buttonText}>Add Vehicle</Text>
+            </LinearGradient>
+          </TouchableOpacity>
       </View>
       <FlatList
         data={vehicles}
@@ -94,15 +105,17 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: '#000',
+    borderColor: '#fff',
     borderWidth: 1,
     borderRadius: 4,
-    marginBottom: 8,
+    marginBottom: 10,
+    paddingTop:10,
+    color:'#fff',
     fontFamily: 'Poppins-Regular',
     paddingHorizontal: 8,
   },
   button: {
-    backgroundColor: 'red',
+    width:'100%',
     padding: 10,
     borderRadius: 4,
     alignItems: 'center',

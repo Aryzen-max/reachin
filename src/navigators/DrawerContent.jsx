@@ -37,7 +37,7 @@ const DrawerContent = (props) => {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={['#fddd00', '#ff6f61']} // Gradient colors
+         colors={['#4c669f', '#3b5998', '#192f6a']}
         style={styles.header}
       >
           <TouchableOpacity  onPress={() => navigation.navigate('ProfileScreen')}>

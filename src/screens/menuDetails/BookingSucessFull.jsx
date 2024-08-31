@@ -7,8 +7,8 @@ import LinearGradient from 'react-native-linear-gradient'; // Import LinearGradi
 const BookingSucessFull = ({ navigation }) => {
   return (
     <LinearGradient
-    //   colors={['#4c669f', '#3b5998', '#192f6a']} // Customize your gradient colors here
-    colors={['#fddd00', '#ff6f61']}
+      colors={['#4c669f', '#3b5998', '#192f6a']} 
+    // colors={['#fddd00', '#ff6f61']}
       style={styles.container}
     >
       {/* Success Animation */}
@@ -29,10 +29,18 @@ const BookingSucessFull = ({ navigation }) => {
         <Text style={styles.detailsText}>Service: General Service</Text>
       </View>
 
-      {/* Continue Button */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('HomeScreen')}>
-        <Text style={styles.buttonText}>Continue</Text>
-      </TouchableOpacity>
+    
+      
+      <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={() => navigation.navigate('HomeScreen')}>
+            <LinearGradient
+              colors={['#4c669f', '#3b5998', '#192f6a']} 
+              style={styles.button}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <Text style={styles.buttonText}>Continue</Text>
+            </LinearGradient>
+          </TouchableOpacity>
     </LinearGradient>
   );
 };
@@ -78,7 +86,6 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 30,
-    backgroundColor: 'red',
     paddingVertical: 10,
     paddingHorizontal: 30,
     borderRadius: 10,

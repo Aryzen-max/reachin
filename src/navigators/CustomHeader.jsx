@@ -13,7 +13,7 @@ const CustomHeader = () => {
         style={styles.locationContainer}
         onPress={() => navigation.navigate('SearchLocationScreen')}
       >
-        <Icon name="location-outline" size={20} color="#ff6f61" />
+        <Icon name="location-outline" size={20} color="#4c669f" />
         <Text style={styles.locationText}>Your Current Location</Text>
       </TouchableOpacity>
       <View style={styles.headerIcons}>
@@ -21,7 +21,7 @@ const CustomHeader = () => {
           style={styles.iconButton}
           onPress={() => navigation.navigate('NotificationScreen')}
         >
-          <Icon name="notifications-outline" size={24} color="red" />
+          <Icon name="notifications-outline" size={24} color="#4c669f" />
           {notificationCount > 0 && (
             <View style={styles.badgeContainer}>
               <Text style={styles.badgeText}>{notificationCount}</Text>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     width: '80%',
-    borderColor: '#ff6f61',
+    borderColor: '#4c669f',
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   locationText: {
     marginLeft: 5,
     fontSize: 14,
-    color: '#ff6f61',
+    color: '#4c669f',
     fontFamily: 'Poppins-Medium',
   },
   headerIcons: {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: -6,
     top: -6,
-    backgroundColor: 'red',
+    backgroundColor: '#4c669f',
     borderRadius: 8,
     width: 16,
     height: 16,
